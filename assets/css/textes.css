@@ -1,1 +1,90 @@
 
+/* --- textes.css --- */
+
+/* Centrage des titres de tableaux */
+th {
+    text-align: center !important; 
+    vertical-align: middle;
+    font-size: 1.1em; 
+}
+
+/* Style des légendes sous les photos */
+.legende {
+    text-align: center;
+    margin-top: 10px; 
+    font-style: italic;    
+    color: #555;             
+}
+
+/* 1. CACHER LE MENU */
+
+body.page-accueil #navPanelToggle {
+    display: none !important; 
+}
+
+.accueil-perso #intro {
+    justify-content: flex-start !important;
+    padding-top: 5vh !important;
+    padding-bottom: 0 !important;
+}
+
+@media screen and (max-width: 736px) {
+    .accueil-perso #intro .actions {
+        display: flex !important;
+        justify-content: center;
+        margin-top: 20px;
+    }
+    
+    .accueil-perso #intro h1 {
+        font-size: 2.5rem !important;
+    }
+}
+
+/* --- Personnalisation du bouton Découvrir (index.html) --- */
+
+/* État normal du bouton */
+.accueil-perso #intro .button.primary {
+    background-color: #ffffff !important; /* Fond BLANC */
+    color: #000000 !important;           /* Texte NOIR */
+    
+    /* Contour noir fin (1px) */
+    border: 1.5px solid #000000 !important; 
+    
+    box-shadow: none !important;
+}
+
+/* État au survol (Quand la souris passe dessus) */
+.accueil-perso #intro .button.primary:hover {
+    background-color: #000000 !important; /* Le fond devient NOIR */
+    color: #ffffff !important;           /* Le texte devient BLANC */
+    border: 1px solid #000000 !important;
+}
+
+/* --- Style du Grand Titre (Bienvenue...) --- */
+.accueil-perso #intro h1 {
+    /* 1. Couleur de l'intérieur des lettres (BLANC) */
+    color: #ffffff !important;
+
+    /* 2. Contour des lettres (NOIR et FIN) */
+    /* 0.8px est une épaisseur fine. Tu peux mettre 0.5px (très fin) ou 1.5px (plus gros) */
+    -webkit-text-stroke: 1.5px black !important; 
+    
+    /* Optionnel : Une petite ombre portée pour détacher encore plus du fond */
+    text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+}
+
+/* --- Style des Liens Hypertextes (Dans le contenu principal) --- */
+
+/* On cible les liens 'a' dans le bloc '#main', MAIS on exclut les boutons et les images */
+#main a:not(.button):not(.image) {
+    color: #003366 !important;       /* Bleu foncé professionnel */
+    text-decoration: underline !important; /* Soulignement trait continu */
+    border-bottom: none !important;   /* On enlève les pointillés du thème par défaut */
+    font-weight: 600;                 /* Un peu plus gras pour bien les voir */
+}
+
+/* Effet au survol (quand on passe la souris) */
+#main a:not(.button):not(.image):hover {
+    color: #18bfef !important;       /* Ils deviennent bleu clair au survol (couleur du thème) */
+    text-decoration: none !important; /* Le soulignement disparaît au survol */
+}
